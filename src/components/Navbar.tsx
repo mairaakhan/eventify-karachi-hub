@@ -18,9 +18,16 @@ const Navbar = () => {
   return (
     <nav className="border-b border-border bg-background">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="text-2xl font-bold">
-          Eventify
-        </Link>
+        <div className="flex items-center gap-6">
+          <Link to="/" className="text-2xl font-bold">
+            Eventify
+          </Link>
+          {user && (
+            <Link to="/events" className="text-sm hover:text-muted-foreground transition-colors">
+              Events
+            </Link>
+          )}
+        </div>
 
         <div className="flex items-center gap-4">
           {user && (
@@ -34,7 +41,7 @@ const Navbar = () => {
               <Button asChild variant="ghost" size="sm">
                 <Link to="/profile">
                   <User className="h-4 w-4 mr-2" />
-                  Profile
+                  My Events
                 </Link>
               </Button>
               <Button onClick={handleLogout} variant="outline" size="sm">

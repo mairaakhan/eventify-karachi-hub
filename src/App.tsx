@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import Home from "./pages/Home";
+import Events from "./pages/Events";
 import Auth from "./pages/Auth";
 import AddEvent from "./pages/AddEvent";
 import EditEvent from "./pages/EditEvent";
@@ -23,6 +24,7 @@ const App = () => (
         <AuthProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/events" element={<Events />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/add-event" element={<AddEvent />} />
             <Route path="/edit-event/:id" element={<EditEvent />} />
