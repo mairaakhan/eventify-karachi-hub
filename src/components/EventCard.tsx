@@ -57,7 +57,7 @@ const EventCard = ({
             {time}
           </div>
           <div className="flex items-center text-sm text-muted-foreground">
-            <MapPin className="h-4 w-4 mr-2" />
+            <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
             {location}
           </div>
         </CardContent>
