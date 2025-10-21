@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "./ui/button";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
-import { User, LogOut, Plus, Calendar, MapPin } from "lucide-react";
 import { toast } from "sonner";
 
 const Navbar = () => {
@@ -22,36 +21,27 @@ const Navbar = () => {
           Eventify
         </Link>
 
-        <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="icon">
-            <Link to="/">
-              <Calendar className="h-5 w-5" />
-            </Link>
+        <div className="flex items-center gap-1">
+          <Button asChild variant="ghost">
+            <Link to="/">Home</Link>
           </Button>
-          <Button asChild variant="ghost" size="icon">
-            <Link to="/events">
-              <MapPin className="h-5 w-5" />
-            </Link>
+          <Button asChild variant="ghost">
+            <Link to="/events">Events</Link>
           </Button>
-          {user && (
+          {user ? (
             <>
-              <Button asChild variant="ghost" size="icon">
-                <Link to="/add-event">
-                  <Plus className="h-5 w-5" />
-                </Link>
+              <Button asChild variant="ghost">
+                <Link to="/add-event">Add Event</Link>
               </Button>
-              <Button asChild variant="ghost" size="icon">
-                <Link to="/profile">
-                  <User className="h-5 w-5" />
-                </Link>
+              <Button asChild variant="ghost">
+                <Link to="/profile">My Events</Link>
               </Button>
-              <Button onClick={handleLogout} variant="ghost" size="icon">
-                <LogOut className="h-5 w-5" />
+              <Button onClick={handleLogout} variant="ghost">
+                Logout
               </Button>
             </>
-          )}
-          {!user && (
-            <Button asChild variant="default" size="sm">
+          ) : (
+            <Button asChild variant="default">
               <Link to="/auth">Sign In</Link>
             </Button>
           )}
