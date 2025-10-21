@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -49,8 +49,15 @@ const EVENT_TYPES = [
 ];
 
 const AddEvent = () => {
+  const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
-  const { user } = useAuth();
+
+  useEffect(() => {
+    if (!authLoading && !user) {
+      toast.error("Please sign in to add an event");
+      navigate("/auth");
+    }
+  }, [user, authLoading, navigate]);
   const [loading, setLoading] = useState(false);
   const [eventName, setEventName] = useState("");
   const [organizerName, setOrganizerName] = useState("");

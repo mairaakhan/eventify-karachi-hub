@@ -71,30 +71,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* CTA Section */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="max-w-4xl mx-auto text-center bg-secondary/20 rounded-lg p-12">
-          <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Whether you're looking for your next experience or want to share one with the community, Eventify is here for you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => navigate("/events")}
-            >
-              Browse Events
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => navigate("/add-event")}
-            >
-              Add Your Event
-            </Button>
-          </div>
-        </div>
-      </div>
 
       {/* Footer */}
       <footer className="border-t border-border mt-16">
