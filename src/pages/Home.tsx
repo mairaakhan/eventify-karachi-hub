@@ -16,45 +16,45 @@ const Home = () => {
         <Navbar />
       
         {/* Hero Section */}
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-8 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 text-foreground drop-shadow-lg">
               Welcome to Eventify
             </h1>
-            <p className="text-2xl font-semibold mb-8 text-foreground drop-shadow-md">
+            <p className="text-xl md:text-2xl font-semibold mb-6 md:mb-8 text-foreground drop-shadow-md">
               Find your next vibe
             </p>
-            <p className="text-lg mb-12 max-w-2xl mx-auto text-foreground/90 drop-shadow-sm bg-background/40 backdrop-blur-sm rounded-lg p-4">
+            <p className="text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto text-foreground/90 drop-shadow-sm bg-background/40 backdrop-blur-sm rounded-lg p-3 md:p-4">
               Discover and share amazing events happening across Karachi — from concerts and workshops to cultural festivals and community gatherings. Your next experience is just a click away.
             </p>
-            <Button size="lg" onClick={() => navigate("/events")} className="text-lg px-8 py-6 shadow-lg">
+            <Button size="lg" onClick={() => navigate("/events")} className="text-base md:text-lg px-6 md:px-8 py-4 md:py-6 shadow-lg w-full sm:w-auto">
               Explore Events
             </Button>
           </div>
         </div>
 
         {/* Features Section */}
-        <div className="container mx-auto px-0 py-0">
-          <div className="max-w-6xl px-0 py-0 my-0 mx-[84px]">
-            <h2 className="text-3xl font-bold text-center mb-12 text-foreground drop-shadow-md">How It Works</h2>
+        <div className="container mx-auto px-4 py-8 md:py-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-foreground drop-shadow-md">How It Works</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-lg shadow-lg px-[19px] py-[22px]">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
-                  <Calendar className="h-8 w-8 text-primary" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-4xl mx-auto">
+              <div className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-lg shadow-lg">
+                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/20 mb-4">
+                  <Calendar className="h-7 w-7 md:h-8 md:w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Discover Events</h3>
-                <p className="text-foreground/80">
+                <h3 className="text-lg md:text-xl font-semibold mb-3 text-foreground">Discover Events</h3>
+                <p className="text-sm md:text-base text-foreground/80">
                   Browse through a curated list of upcoming events in Karachi. Filter by type and find exactly what you're looking for.
                 </p>
               </div>
 
               <div className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-lg shadow-lg">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
-                  <Sparkles className="h-8 w-8 text-primary" />
+                <div className="inline-flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/20 mb-4">
+                  <Sparkles className="h-7 w-7 md:h-8 md:w-8 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Share Your Event</h3>
-                <p className="text-foreground/80">
+                <h3 className="text-lg md:text-xl font-semibold mb-3 text-foreground">Share Your Event</h3>
+                <p className="text-sm md:text-base text-foreground/80">
                   Organizing something amazing? List your event in minutes. No approval needed — just add and go live instantly.
                 </p>
               </div>
@@ -64,9 +64,9 @@ const Home = () => {
 
 
         {/* Footer */}
-        <footer className="border-t border-border/50 mt-16 bg-background/60 backdrop-blur-sm">
-          <div className="container mx-auto px-4 py-8">
-            <p className="text-center text-foreground/70">
+        <footer className="border-t border-border/50 mt-8 md:mt-16 bg-background/60 backdrop-blur-sm">
+          <div className="container mx-auto px-4 py-6 md:py-8">
+            <p className="text-center text-sm md:text-base text-foreground/70">
               © 2025 Eventify. Bringing Karachi together, one event at a time.
             </p>
           </div>

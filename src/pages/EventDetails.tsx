@@ -66,11 +66,11 @@ const EventDetails = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-6 md:py-8">
         <Button
           variant="ghost"
           onClick={() => navigate("/events")}
-          className="mb-6"
+          className="mb-4 md:mb-6"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back
@@ -78,7 +78,7 @@ const EventDetails = () => {
 
         <div className="max-w-4xl mx-auto">
           {event.image_url && (
-            <div className="w-full h-96 mb-6 rounded-lg overflow-hidden">
+            <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 mb-4 md:mb-6 rounded-lg overflow-hidden">
               <img
                 src={event.image_url}
                 alt={event.event_name}
@@ -87,36 +87,36 @@ const EventDetails = () => {
             </div>
           )}
 
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             <div>
-              <span className="text-sm px-3 py-1 bg-secondary rounded-md">
+              <span className="text-xs md:text-sm px-2 md:px-3 py-1 bg-secondary rounded-md">
                 {event.event_type}
               </span>
-              <h1 className="text-4xl font-bold mt-4">{event.event_name}</h1>
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 md:mt-4">{event.event_name}</h1>
             </div>
 
-            <div className="grid gap-4">
-              <div className="flex items-center text-lg">
-                <User className="h-5 w-5 mr-3" />
-                <span>Organized by {event.organizer_name}</span>
+            <div className="grid gap-3 md:gap-4">
+              <div className="flex items-center text-sm md:text-base lg:text-lg">
+                <User className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 flex-shrink-0" />
+                <span className="break-words">Organized by {event.organizer_name}</span>
               </div>
-              <div className="flex items-center text-lg">
-                <Calendar className="h-5 w-5 mr-3" />
+              <div className="flex items-center text-sm md:text-base lg:text-lg">
+                <Calendar className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 flex-shrink-0" />
                 <span>{format(new Date(event.date), "PPP")}</span>
               </div>
-              <div className="flex items-center text-lg">
-                <Clock className="h-5 w-5 mr-3" />
+              <div className="flex items-center text-sm md:text-base lg:text-lg">
+                <Clock className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 flex-shrink-0" />
                 <span>{event.time}</span>
               </div>
-              <div className="flex items-center text-lg">
-                <MapPin className="h-5 w-5 mr-3" />
-                <span>{event.location}</span>
+              <div className="flex items-start text-sm md:text-base lg:text-lg">
+                <MapPin className="h-4 w-4 md:h-5 md:w-5 mr-2 md:mr-3 flex-shrink-0 mt-1" />
+                <span className="break-words">{event.location}</span>
               </div>
             </div>
 
-            <div className="pt-6 border-t">
-              <h2 className="text-2xl font-bold mb-4">About this event</h2>
-              <p className="text-muted-foreground whitespace-pre-wrap">
+            <div className="pt-4 md:pt-6 border-t">
+              <h2 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">About this event</h2>
+              <p className="text-sm md:text-base text-muted-foreground whitespace-pre-wrap break-words">
                 {event.description}
               </p>
             </div>

@@ -128,18 +128,18 @@ const AddEvent = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-6 md:py-8">
         <Button
           variant="ghost"
           onClick={() => navigate("/events")}
-          className="mb-6"
+          className="mb-4 md:mb-6"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back
         </Button>
 
         <div className="max-w-2xl mx-auto">
-          <h1 className="text-3xl font-bold mb-6">Add New Event</h1>
+          <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Add New Event</h1>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="space-y-2">

@@ -97,28 +97,28 @@ const Profile = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-6 md:py-8">
         <Button
           variant="ghost"
           onClick={() => navigate("/events")}
-          className="mb-6"
+          className="mb-4 md:mb-6"
         >
           <ArrowLeft className="h-4 w-4 mr-2" />
           Back
         </Button>
-        <h1 className="text-3xl font-bold mb-6">Your Events</h1>
+        <h1 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Your Events</h1>
 
         {events.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground mb-4">You haven't added any events yet</p>
-            <Button onClick={() => navigate("/add-event")}>Add Your First Event</Button>
+          <div className="text-center py-8 md:py-12">
+            <p className="text-sm md:text-base text-muted-foreground mb-4">You haven't added any events yet</p>
+            <Button onClick={() => navigate("/add-event")} className="w-full sm:w-auto">Add Your First Event</Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {events.map((event) => (
               <Card key={event.id}>
                 {event.image_url && (
-                  <div className="w-full h-48 overflow-hidden">
+                  <div className="w-full h-40 sm:h-48 overflow-hidden">
                     <img
                       src={event.image_url}
                       alt={event.event_name}
@@ -126,30 +126,30 @@ const Profile = () => {
                     />
                   </div>
                 )}
-                <CardHeader>
-                  <CardTitle>{event.event_name}</CardTitle>
-                  <CardDescription>
+                <CardHeader className="p-4 md:p-6">
+                  <CardTitle className="text-lg md:text-xl line-clamp-1">{event.event_name}</CardTitle>
+                  <CardDescription className="text-xs md:text-sm">
                     {format(new Date(event.date), "PPP")} at {event.time}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex gap-2">
+                <CardContent className="p-4 md:p-6 pt-0">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <Button
                       variant="outline"
                       size="sm"
-                      className="flex-1"
+                      className="flex-1 text-xs md:text-sm"
                       onClick={() => navigate(`/edit-event/${event.id}`)}
                     >
-                      <Edit className="h-4 w-4 mr-2" />
+                      <Edit className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
                       Edit
                     </Button>
                     <Button
                       variant="destructive"
                       size="sm"
-                      className="flex-1"
+                      className="flex-1 text-xs md:text-sm"
                       onClick={() => setDeleteEventId(event.id)}
                     >
-                      <Trash2 className="h-4 w-4 mr-2" />
+                      <Trash2 className="h-3 w-3 md:h-4 md:w-4 mr-1 md:mr-2" />
                       Delete
                     </Button>
                   </div>

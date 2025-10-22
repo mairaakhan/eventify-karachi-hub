@@ -95,13 +95,13 @@ const Events = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <div className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-2">Discover Events in Karachi</h1>
-          <p className="text-xl text-muted-foreground">Find your next vibe</p>
+      <div className="container mx-auto px-4 py-6 md:py-8">
+        <div className="text-center mb-6 md:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Discover Events in Karachi</h1>
+          <p className="text-lg md:text-xl text-muted-foreground">Find your next vibe</p>
         </div>
 
-        <div className="mb-6 max-w-xs">
+        <div className="mb-6 w-full sm:max-w-xs">
           <Select value={selectedType} onValueChange={setSelectedType}>
             <SelectTrigger>
               <SelectValue placeholder="Filter by event type" />
