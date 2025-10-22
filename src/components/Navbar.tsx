@@ -29,11 +29,11 @@ const Navbar = () => {
             <Button asChild variant="ghost">
               <Link to="/events">Events</Link>
             </Button>
+            <Button asChild variant="ghost">
+              <Link to="/add-event">Add Event</Link>
+            </Button>
             {user ? (
               <>
-                <Button asChild variant="ghost">
-                  <Link to="/add-event">Add Event</Link>
-                </Button>
                 <Button asChild variant="ghost">
                   <Link to="/profile">My Events</Link>
                 </Button>
