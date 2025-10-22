@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Prism from "@/components/Prism";
-import { Calendar, Users, Sparkles } from "lucide-react";
+import { Calendar, Sparkles } from "lucide-react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -56,7 +56,7 @@ const Home = () => {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-foreground drop-shadow-md">How It Works</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-lg shadow-lg">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
                   <Calendar className="h-8 w-8 text-primary" />
@@ -74,16 +74,6 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-3 text-foreground">Share Your Event</h3>
                 <p className="text-foreground/80">
                   Organizing something amazing? List your event in minutes. No approval needed — just add and go live instantly.
-                </p>
-              </div>
-
-              <div className="text-center p-6 bg-background/60 backdrop-blur-sm rounded-lg shadow-lg">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/20 mb-4">
-                  <Users className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3 text-foreground">Connect with Community</h3>
-                <p className="text-foreground/80">
-                  Join a vibrant community of event-goers and organizers. Make every day in Karachi an adventure.
                 </p>
               </div>
             </div>
