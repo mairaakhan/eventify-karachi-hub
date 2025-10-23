@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { format } from "date-fns";
-
 interface EventCardProps {
   id: string;
   event_name: string;
@@ -13,7 +12,6 @@ interface EventCardProps {
   location: string;
   image_url?: string;
 }
-
 const EventCard = ({
   id,
   event_name,
@@ -22,20 +20,13 @@ const EventCard = ({
   time,
   event_type,
   location,
-  image_url,
+  image_url
 }: EventCardProps) => {
-  return (
-    <Link to={`/event/${id}`}>
+  return <Link to={`/event/${id}`}>
       <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full">
-        {image_url && (
-          <div className="w-full h-40 sm:h-48 overflow-hidden">
-            <img
-              src={image_url}
-              alt={event_name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        )}
+        {image_url && <div className="w-full h-40 sm:h-48 overflow-hidden">
+            <img src={image_url} alt={event_name} className="w-full h-full object-cover" />
+          </div>}
         <CardHeader className="p-4 md:p-6">
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs px-2 py-1 bg-secondary rounded-md truncate max-w-full">
@@ -47,7 +38,7 @@ const EventCard = ({
             {description}
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-2 p-4 md:p-6 pt-0">
+        <CardContent className="space-y-2 p-4 md:p-6 pt-0 my-0">
           <div className="flex items-center text-xs md:text-sm text-muted-foreground">
             <Calendar className="h-3 w-3 md:h-4 md:w-4 mr-2 flex-shrink-0" />
             <span className="truncate">{format(new Date(date), "PPP")}</span>
@@ -62,8 +53,6 @@ const EventCard = ({
           </div>
         </CardContent>
       </Card>
-    </Link>
-  );
+    </Link>;
 };
-
 export default EventCard;
